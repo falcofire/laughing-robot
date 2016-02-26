@@ -11,6 +11,14 @@
   <name>laughing-robot</name>
   <url>http://maven.apache.org</url>
  
+  <repositories>
+    <repository>
+      <id>spring-snapshot</id>
+      <name>Spring Snapshot Repository</name>
+      <url>https://repo.spring.io/snapshot</url>
+    </repository>
+  </repositories>
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -30,6 +38,16 @@
 	 <groupId>org.springframework</groupId>
 	  <artifactId>spring-webmvc</artifactId>
 	   <version>4.2.4.RELEASE</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework.security</groupId>
+	    <artifactId>spring-security-web</artifactId>
+	    <version>3.2.10.CI-SNAPSHOT</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework.security</groupId>
+	    <artifactId>spring-security-config</artifactId>
+	    <version>3.2.10.CI-SNAPSHOT</version>
 	</dependency>
 	<dependency>
 	    <groupId>javax.servlet</groupId>
