@@ -1,4 +1,4 @@
-package org.springframework.security.laughingrobot.config;
+package com.robot.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -9,15 +9,27 @@ import org.springframework.security.config.annotation.web.configuration.*;
 @Configuration
 @EnableWebSecurity
 public class RobotSecurityConfig extends WebSecurityConfigurerAdapter {
+	
+	@Autowired
+	RobotLoginSuccessHandler robotLoginSuccessHandler;
+	
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
 		http
         .authorizeRequests()
             .antMatchers("/images/**").permitAll() 
             .anyRequest().authenticated()
+            .antMatchers("/", "/home").access("hasRole('USER')")
+            .antMatchers("/admin/**").access("hasRole('ADMIN')")
+            .and().formLogin().loginPage("/login").successHandler(robotLoginSuccessHandler)
+            .usernameParameter("username").passwordParameter("password")
+            .and().csrf()
+            .and().exceptionHandling().accessDeniedPage("/Access_Denied")
             .and()
         .formLogin()
             .loginPage("/login")
+            .usernameParameter("username")
+            .passwordParameter("password")
             .permitAll()
             .and()
         .logout()                                    

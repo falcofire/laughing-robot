@@ -1,6 +1,6 @@
 import org.springframework.web.servlet.ModelAndView;
 
-import controllers.HelloController;
+import com.robot.controllers.HelloController;
 
 import junit.framework.TestCase;
 

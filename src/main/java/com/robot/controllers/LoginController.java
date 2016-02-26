@@ -1,4 +1,4 @@
-package controllers;
+package com.robot.controllers;
 
 import java.util.Date;
 
