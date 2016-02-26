@@ -11,22 +11,21 @@
 	   http://www.springframework.org/schema/context
 	   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-  <!-- the application context definition for the laughing-robot DispatcherServlet -->
 	
 	<mvc:resources mapping="/images/**" location="/images/" />
     <mvc:annotation-driven />
-    <context:component-scan base-package="controllers"/>
+    <context:component-scan base-package="com.robot.configuration"/>
     <mvc:default-servlet-handler/>
-    
-	<bean name="/" class="controllers.HelloController" />
-	<bean name="/login" class="controllers.LoginController" />
-  	<bean name="/hello.htm" class="controllers.HelloController"/>
-  	
-
-	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+     
+	<bean name="/" class="com.robot.controllers.HelloController" />
+	<!--
+	<bean name="/login" class="com.robot.controllers.LoginController" />
+  	<bean name="/hello.htm" class="com.robot.controllers.HelloController"/>
+	-->
+	<!--  <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
         <property name="prefix" value="/WEB-INF/jsp/"></property>
         <property name="suffix" value=".jsp"></property>        
-    </bean>
+    </bean> -->
   
 </beans>
