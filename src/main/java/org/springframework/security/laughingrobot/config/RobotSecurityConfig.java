@@ -8,7 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.*;
 
 @Configuration
 @EnableWebSecurity
-public class RobotSecurity extends WebSecurityConfigurerAdapter {
+public class RobotSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
 		http

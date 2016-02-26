@@ -6,6 +6,6 @@ public class RobotSecurityWebApplicationInitializer
       extends AbstractSecurityWebApplicationInitializer {
 
     public RobotSecurityWebApplicationInitializer() {
-        super(RobotSecurity.class);
+        super(RobotSecurityConfig.class);
     }
 }
