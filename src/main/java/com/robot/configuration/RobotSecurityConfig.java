@@ -12,10 +12,12 @@ public class RobotSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
 	RobotLoginSuccessHandler robotLoginSuccessHandler;
+	RobotLogoutSuccessHandler robotLogoutSuccessHandler;
 	
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
 		http
+		.csrf().disable()
         .authorizeRequests()
             .antMatchers("/images/**").permitAll() 
             .anyRequest().authenticated()
@@ -23,7 +25,6 @@ public class RobotSecurityConfig extends WebSecurityConfigurerAdapter {
             .antMatchers("/admin/**").access("hasRole('ADMIN')")
             .and().formLogin().loginPage("/login").successHandler(robotLoginSuccessHandler)
             .usernameParameter("username").passwordParameter("password")
-            .and().csrf()
             .and().exceptionHandling().accessDeniedPage("/Access_Denied")
             .and()
         .formLogin()
@@ -32,7 +33,8 @@ public class RobotSecurityConfig extends WebSecurityConfigurerAdapter {
             .passwordParameter("password")
             .permitAll()
             .and()
-        .logout()                                    
+        .logout()
+        	.and().logout().logoutUrl("/login?logout").addLogoutHandler(robotLogoutSuccessHandler)
             .permitAll();
     }
 	
