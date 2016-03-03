@@ -45,7 +45,7 @@
 					<input type="hidden" name=logout value=${param.logout} />
 						<fieldset>
 							<div class="alert alert-warning" id=errorDiv style="display:none;">    
-			                    <h5>Invalid username and password.</h5>
+			                    Invalid username and password.
 			                </div>
 		                	<div class="alert alert-success" id=logoutDiv style="display:none;"> 
                    			You have been logged out.
