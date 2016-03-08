@@ -5,7 +5,13 @@
 		$(document).ready(function() {
 	    $('ul.nav.navbar-nav').find('a[href="' + location.pathname + '"]')
 	        .closest('li').addClass('active');
-	});
+	        
+		  	//Get URL
+		  	var url = window.location.href;
+		  	if (url.search("accessDenied") >= 0){
+		  		$('#accessDenied').modal();
+		  	}
+  	});
   	</script>
   	</head>
   	<body>
@@ -30,18 +36,25 @@
 			      			<li role="presentation"><a href="/laughing-robot/home">Home</a></li>
 							<li role="presentation" style="padding-right:15px;"><a href="/laughing-robot/admin">Admin Console</a></li>
 			      		</ul>
-			      		
-						<!-- <div class="page-header">
-							<div align="right" style="vertical-align:middle;">
-								<c:url var="logoutUrl" value="/logout"/>
-								<form action="${logoutUrl}" method="post">
-								  	<div class="form-actions">
-		                   				<button type="submit" class="btn">Log out</button>
-		              				  	</div>
-								  	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-								</form>
-							</div>
-						</div> -->
+					</div>
+					<div id="accessDenied" class="modal fade" role="dialog">
+						<div class="modal-dialog">
+					
+						    <!-- Modal content-->
+						    <div class="modal-content">
+						    	<div class="modal-header">
+						        	<button type="button" class="close" data-dismiss="modal">&times;</button>
+						        	<h4 class="modal-title">Access Denied</h4>
+						      	</div>
+						      	<div class="modal-body">
+						        	<p>You do not have permission to access that page.</p>
+						      	</div>
+						      	<div class="modal-footer">
+						        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						      	</div>
+					    	</div>
+					
+					  	</div>
 					</div>
 				</div>
 			</div>

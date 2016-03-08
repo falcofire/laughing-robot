@@ -48,7 +48,7 @@ public class HelloController{
     @RequestMapping(value = "/Access_Denied", method = RequestMethod.GET)
     public String accessDeniedPage(ModelMap model){
     	model.addAttribute("user", getPrincipal());
-    	return "accessDenied";
+    	return "redirect:/home?accessDenied";
     }
     
     @RequestMapping(value = "/login", method = RequestMethod.GET)
