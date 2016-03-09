@@ -10,3 +10,4 @@
 	<%@include file="webjars/bootstrap3.3.6/css/bootstrap-theme.css" %>
 	<%@include file="webjars/bootstrap3.3.6/css/laughing-robot-css.css" %>
 </style>
+<link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/images/favicon.ico" />
