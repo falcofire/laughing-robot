@@ -1,6 +1,6 @@
 <%@ include file="/WEB-INF/jsp/include.jsp" %>
 <html>
-  <head><title>Hello :: Spring Application</title>
+  <head><title>Laughing Robot</title>
 	  <script type="text/javascript">
 	  	$(document).ready(function() {
 		  	//Get URL
